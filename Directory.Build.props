@@ -1,7 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <AvaloniaVersion>11.0.10</AvaloniaVersion>
-    <CommunityToolkitMvvmVersion>8.2.2</CommunityToolkitMvvmVersion>
-  </PropertyGroup>
-</Project>
