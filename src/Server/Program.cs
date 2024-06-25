@@ -10,9 +10,9 @@ class Program
     [STAThread]
     static void Main(string[] args)
     {
-        PhotinoServer
-            .CreateStaticFileServer(args, out string baseUrl)
-            .RunAsync();
+        var server = PhotinoServer.CreateStaticFileServer(args, out string baseUrl);
+
+        server.RunAsync();
 
         // Window title declared here for visibility
         string windowTitle = "Photino.React Demo App";
@@ -43,7 +43,7 @@ class Program
             // PhotinoWindow was instantiated by calling a registration 
             // method like the following RegisterWebMessageReceivedHandler.
             // This could be added in the PhotinoWindowOptions if preferred.
-            .RegisterWebMessageReceivedHandler(static (object sender, string message) =>
+            .RegisterWebMessageReceivedHandler(static (object? sender, string message) =>
             {
                 if (sender is not null)
                 {
