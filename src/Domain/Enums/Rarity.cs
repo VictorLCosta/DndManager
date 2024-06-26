@@ -1,4 +1,4 @@
-namespace DndManager.Core.Domain.Enums;
+namespace Domain.Enums;
 
 public enum Rarity
 {

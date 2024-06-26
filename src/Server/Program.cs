@@ -43,7 +43,7 @@ class Program
             // PhotinoWindow was instantiated by calling a registration 
             // method like the following RegisterWebMessageReceivedHandler.
             // This could be added in the PhotinoWindowOptions if preferred.
-            .RegisterWebMessageReceivedHandler(static (object sender, string message) =>
+            .RegisterWebMessageReceivedHandler(static (object? sender, string message) =>
             {
                 if (sender is not null)
                 {
