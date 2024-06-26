@@ -31,12 +31,16 @@
             "error",
             "as-needed"
         ],
-        "import/extensions": ["error", "always", {
-            "js": "never",
-            "jsx": "never",
-            "ts": "never",
-            "tsx": "never"
-        }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
         "import/order": [
             "error",
             {

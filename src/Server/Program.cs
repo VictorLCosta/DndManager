@@ -10,9 +10,9 @@ class Program
     [STAThread]
     static void Main(string[] args)
     {
-        PhotinoServer
-            .CreateStaticFileServer(args, out string baseUrl)
-            .RunAsync();
+        var server = PhotinoServer.CreateStaticFileServer(args, out string baseUrl);
+
+        server.RunAsync();
 
         // Window title declared here for visibility
         string windowTitle = "Photino.React Demo App";
