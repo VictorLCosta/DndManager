@@ -1,16 +1,22 @@
+import { useQueryClient } from "@tanstack/react-query";
+import { useMemo } from "react";
+import { RouterProvider } from "react-router-dom";
+
 import AppProvider from "./main-provider";
+import { createRouter } from "./routes";
+
+function AppRouter() {
+  const queryClient = useQueryClient();
+
+  const router = useMemo(() => createRouter(queryClient), [queryClient]);
+
+  return <RouterProvider router={router} />;
+}
 
 function App() {
   return (
     <AppProvider>
-      <h1>Grimoir</h1>
-      <h2>Grimoir</h2>
-      <h3>Grimoir</h3>
-      <h4>Grimoir</h4>
-      <h5>Grimoir</h5>
-      <h6>Grimoir</h6>
-      <button type="button">Click</button>
-      <input placeholder="Seleciona eu" />
+      <AppRouter />
     </AppProvider>
   );
 }

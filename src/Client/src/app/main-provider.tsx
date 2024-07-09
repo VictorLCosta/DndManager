@@ -1,3 +1,6 @@
+import { QueryClientProvider } from "@tanstack/react-query";
+
+import { queryClient } from "@/lib/react-query";
 import GlobalStyle from "@/styles/global-style";
 
 type AppProviderProps = {
@@ -6,9 +9,9 @@ type AppProviderProps = {
 
 export default function AppProvider({ children }: AppProviderProps) {
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <GlobalStyle />
       {children}
-    </div>
+    </QueryClientProvider>
   );
 }

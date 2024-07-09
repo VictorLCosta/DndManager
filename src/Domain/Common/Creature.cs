@@ -3,10 +3,14 @@ namespace Domain.Common;
 public abstract class Creature : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
-    public string Slug { get; set; } = string.Empty;
+    public string Index { get; set; } = string.Empty;
     public int Level { get; set; }
     public int HitPoints { get; set; }
-    public int ArmorClass { get; set; }
+    public Dice HitDice { get; set; } = null!;
+    public Dice HitDiceRoll { get; set; } = null!;
+    public string Alignment { get; set; } = string.Empty;
+
+    public CreatureSpeed Speed { get; set; } = null!;
 
     public CreatureType CreatureType { get; set; }
     public Size Size { get; set; }
@@ -17,7 +21,4 @@ public abstract class Creature : BaseEntity
     public int Wisdom { get; set; }
     public int Constitution { get; set; }
     public int Charisma { get; set; }
-
-    public virtual ICollection<Equipment> Equipment { get; set; } = [];
-    public virtual ICollection<Spell> Spells { get; set; } = [];
 }

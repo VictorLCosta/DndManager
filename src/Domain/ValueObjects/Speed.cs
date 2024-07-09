@@ -2,6 +2,8 @@ namespace Domain.ValueObjects;
 
 public class Speed : ValueObject
 {
+    public Speed() { }
+
     public Speed(double quantity, SpeedUnit unit)
     {
         Quantity = quantity;

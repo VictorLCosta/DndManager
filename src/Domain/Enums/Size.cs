@@ -1,6 +1,6 @@
 namespace Domain.Enums;
 
-public enum Size
+public struct Size
 {
     Tiny,
     Small,

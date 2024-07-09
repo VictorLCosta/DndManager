@@ -1,4 +1,4 @@
-global using Domain.Entities;
+global using Domain.ExtendedAttributes;
 global using Domain.Common;
 global using Domain.Enums;
 global using Domain.Exceptions;

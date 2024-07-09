@@ -1,20 +1,15 @@
 namespace Domain.ValueObjects;
 
-public class Damage(int quantity, Dice dice, DamageType damageType, int? modifier = null) : ValueObject
+public class Damage(Dice dice, DamageType damageType) : ValueObject
 {
-    private readonly Dice _dice = dice;
-    private readonly int _quantity = quantity;
-    private readonly DamageType _damageType = damageType;
-    private readonly int? _modifier = modifier;
+    public Dice Dice { get; } = dice;
+    public DamageType DamageType { get; } = damageType;
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return _quantity;
-        yield return _dice;
-        yield return _damageType;
-        yield return _modifier ?? 0;
+        yield return Dice;
+        yield return DamageType;
     }
 
-    public override string ToString() => $"{_quantity}{nameof(_dice).ToLower()}{(_modifier.HasValue ? $"+{_modifier}" : string.Empty)} {nameof(_damageType)}";
-
+    public override string ToString() => $"{Dice} {nameof(DamageType).ToLower()}";
 }

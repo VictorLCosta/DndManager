@@ -3,6 +3,9 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0; padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
   }
 
   html {
@@ -19,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    background: none;
+    font: inherit;
     cursor: pointer;
   }
 

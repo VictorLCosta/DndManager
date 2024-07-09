@@ -1,15 +1,9 @@
 namespace Domain.ValueObjects;
 
-public class Money : ValueObject
+public class Money(int quantity, Currency currency) : ValueObject
 {
-    public Money(int quantity, Currency currency)
-    {
-        Quantity = quantity;
-        Currency = currency ?? throw new ArgumentNullException(nameof(currency));
-    }
-
-    public int Quantity { get; }
-    public Currency Currency { get; }
+    public int Quantity { get; } = quantity;
+    public Currency Currency { get; } = currency ?? throw new ArgumentNullException(nameof(currency));
 
     private static readonly Dictionary<string, int> rates = new()
     {

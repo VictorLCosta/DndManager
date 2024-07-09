@@ -1,3 +1,5 @@
+using Domain.Entities;
+
 namespace Domain.Common;
 
 public abstract class Equipment : BaseEntity
@@ -16,4 +18,6 @@ public abstract class Equipment : BaseEntity
     public Equipment? Parent { get; set; }
 
     public virtual ICollection<Equipment>? Variants { get; set; }
+
+    public ICollection<ClassEquipment> StartingEquipment { get; set; } = [];
 }
